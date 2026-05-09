@@ -26,33 +26,33 @@ The contract is deployed and verified on the Sepolia Testnet.
 ### 1. Installation & Setup
 Clone the repository and install all necessary dependencies with these commands:
 
-# Clone the project
+### Clone the project
 git clone <your-repo-url>
 cd RegChain
 
-# Install OpenZeppelin Contracts
+### Install OpenZeppelin Contracts
 forge install OpenZeppelin/openzeppelin-contracts
 
-# Build the project
+### Build the project
 forge build
 
 ### 2. Quality Assurance (Testing)
 I maintain high standards for logic integrity. Run the test suite to verify the contract behavior:
 
-# Run all tests
+### Run all tests
 forge test
 
-# Run tests with gas report for optimization analysis
+### Run tests with gas report for optimization analysis
 forge test --gas-report
 
 ### 3. Deployment & Verification
 To deploy the contract to the Sepolia network, ensure your .env file is set up correctly (refer to .env.example).
 
-# Deploy and verify on Etherscan using environment variables
+### Deploy and verify on Etherscan using environment variables
 forge create contracts/RegChainCore.sol:RegChainCore --rpc-url $env:RPC_URL --private-key $env:PRIVATE_KEY --etherscan-api-key $env:ETHERSCAN_API_KEY --verify --broadcast
 
 ## Author
-* **Project Lead:** [Ines Krueger]
+* **Project Lead:** Ines Krueger
 
 ## License
 This project is licensed under the MIT License.
