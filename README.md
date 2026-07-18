@@ -18,11 +18,11 @@ RegChain demonstrates how role-based authorization and on-chain audit records ca
 3. Authorized auditors retrieve and review the compliance record.
 4. External applications can verify the audit information directly from the blockchain.
 
-### Live on Ethereum (Sepolia)
+## Live on Ethereum (Sepolia)
 The contract is deployed and verified on the Sepolia Testnet.
 * **Contract Address:** [0x8c66419d3b68dd2ade365627e0e6a15229bca628](https://sepolia.etherscan.io/address/0x8c66419d3b68dd2ade365627e0e6a15229bca628)
 
-### Key Features
+## Key Features
 - **Role-Based Access Control (RBAC):** Built on OpenZeppelin AccessControl to manage Compliance Officer and Auditor permissions.
 - **On-Chain Audit Records:** Stores compliance reports including jurisdiction, risk score, approval status, and IPFS document references.
 - **Transparent Compliance Logging:** All compliance events are recorded on-chain and can be independently verified.
