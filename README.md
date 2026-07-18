@@ -29,15 +29,11 @@ The contract is deployed and verified on the Ethereum Sepolia Testnet.
 
 ## Technical Architecture
 
-**Framework:** Foundry (Forge)
-
-**Language:** Solidity 0.8.20
-
-**Security:** OpenZeppelin AccessControl
-
-**Storage:** On-chain compliance records with IPFS document references
-
-**Network:** Ethereum Sepolia Testnet
+- **Framework:** Foundry (Forge)
+- **Language:** Solidity 0.8.20
+- **Security:** OpenZeppelin AccessControl
+- **Storage:** On-chain compliance records with IPFS document references
+- **Network:** Ethereum Sepolia Testnet
 
 ## Test Coverage
 
@@ -65,7 +61,7 @@ forge install OpenZeppelin/openzeppelin-contracts
 forge build
 
 ### 2. Quality Assurance (Testing)
-I maintain high standards for logic integrity. Run the test suite to verify the contract behavior:
+Automated Foundry tests are provided to verify the core contract functionality.
 
 ### Run all tests
 forge test
