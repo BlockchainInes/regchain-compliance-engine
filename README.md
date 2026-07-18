@@ -20,62 +20,50 @@ RegChain demonstrates how role-based authorization and on-chain audit records ca
 ## System Architecture
 
 ```mermaid
-flowchart LR
-    %% Actors
-    CO["👤 Compliance Officer<br/><span style='font-size:12px'>Creates and manages reports</span>"]
-    AU["🔎 Authorized Auditor<br/><span style='font-size:12px'>Reviews compliance records</span>"]
-    DAPP["🔗 External dApps<br/><span style='font-size:12px'>Verify asset eligibility</span>"]
+flowchart TD
+    CO["Compliance Officer<br/>Creates compliance reports"]
 
-    %% Core contract
-    subgraph CORE["RegChain Core — Smart Contract Layer"]
-        direction TB
-        AC["Role-Based Authorization<br/><span style='font-size:12px'>OpenZeppelin AccessControl</span>"]
-        CR["Compliance Report Registry<br/><span style='font-size:12px'>Jurisdiction · Risk Score · Status</span>"]
-        EL["Event-Based Audit Logging<br/><span style='font-size:12px'>Transparent on-chain activity</span>"]
-        IR["IPFS Reference Management<br/><span style='font-size:12px'>Document metadata hashes</span>"]
+    RC["RegChain Core<br/><br/>Role-Based Authorization<br/>Compliance Report Registry<br/>Risk Score & Jurisdiction<br/>IPFS Document References"]
 
-        AC --> CR
-        CR --> EL
-        CR --> IR
-    end
+    ETH["Ethereum Sepolia<br/>On-chain compliance records<br/>Events and verification data"]
 
-    %% Infrastructure
-    ETH[("⛓️ Ethereum Sepolia<br/><span style='font-size:12px'>On-chain compliance records</span>")]
-    IPFS[("📄 IPFS<br/><span style='font-size:12px'>Off-chain audit documentation</span>")]
+    IPFS["IPFS<br/>Supporting audit documentation"]
 
-    %% Main workflow
-    CO -->|"Authorized transaction"| AC
-    CR -->|"Stores structured report"| ETH
-    IR -->|"References document hash"| IPFS
+    AUD["Authorized Auditor<br/>Reviews compliance records"]
 
-    ETH -->|"Reads and verifies"| AU
-    IPFS -.->|"Retrieves supporting files"| AU
+    APP["External dApps<br/>Verify asset compliance status"]
 
-    ETH -->|"Compliance status query"| DAPP
-    DAPP -.->|"Optional document retrieval"| IPFS
+    CO -->|"Authorized transaction"| RC
 
-    %% Styling
+    RC -->|"Stores structured report"| ETH
+    RC -->|"Stores document reference"| IPFS
+
+    ETH -->|"Reads compliance record"| AUD
+    IPFS -->|"Retrieves supporting document"| AUD
+
+    ETH -->|"Queries compliance status"| APP
+
     classDef actor fill:#111827,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
     classDef core fill:#172033,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
     classDef chain fill:#102a2e,stroke:#2dd4bf,stroke-width:2px,color:#f8fafc;
     classDef storage fill:#2a1f3d,stroke:#c084fc,stroke-width:2px,color:#f8fafc;
 
-    class CO,AU,DAPP actor;
-    class AC,CR,EL,IR core;
+    class CO,AUD,APP actor;
+    class RC core;
     class ETH chain;
     class IPFS storage;
-
-    style CORE fill:#0f172a,stroke:#64748b,stroke-width:1.5px,color:#f8fafc
 ```
 
 ### Architecture Summary
 
 RegChain separates structured compliance data from detailed audit documentation:
 
-- **Ethereum Sepolia** stores verifiable compliance records, authorization logic, and audit events.
-- **IPFS** provides decentralized references to supporting compliance documents.
-- **OpenZeppelin AccessControl** restricts report management and review operations to authorized roles.
-- **External applications** can query on-chain records to evaluate the compliance status of tokenized assets.
+- **Ethereum Sepolia** stores compliance records, authorization data, and audit events.
+- **IPFS** provides decentralized references to supporting documents.
+- **OpenZeppelin AccessControl** restricts report management to authorized roles.
+- **Auditors and external applications** can independently verify compliance information.
+
+
 
 ## Deployment
 The contract is deployed and verified on the Ethereum Sepolia Testnet.
