@@ -39,14 +39,24 @@ The contract is deployed and verified on the Ethereum Sepolia Testnet.
 
 **Network:** Ethereum Sepolia Testnet
 
+## Test Coverage
+
+The project includes automated Foundry tests covering:
+
+- Role-based access control
+- Compliance report creation
+- Risk score evaluation
+- Audit record retrieval
+
 ## Developer Guide
 
 ### 1. Installation & Setup
 Clone the repository and install all necessary dependencies with these commands:
 
 ### Clone the project
-git clone <your-repo-url>
-cd RegChain
+git clone https://github.com/BlockchainInes/regchain-compliance-engine.git
+
+cd regchain-compliance-engine
 
 ### Install OpenZeppelin Contracts
 forge install OpenZeppelin/openzeppelin-contracts
