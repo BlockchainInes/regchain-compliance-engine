@@ -5,7 +5,7 @@
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.20-brightgreen)
 
 ## Overview
-RegChain Core demonstrates a blockchain-native compliance architecture for Real World Assets (RWAs). The project combines role-based authorization, immutable audit records, and decentralized document references to support transparent and verifiable compliance processes.
+RegChain Core is a smart contract framework for Real World Asset (RWA) compliance and on-chain audit reporting. It demonstrates how role-based access control, immutable blockchain records, and off-chain document references can support transparent compliance workflows for tokenized assets.
 
 ### Live on Ethereum (Sepolia)
 The contract is deployed and verified on the Sepolia Testnet.
