@@ -12,14 +12,17 @@ As tokenized Real World Assets (RWAs) become increasingly adopted, transparent c
 RegChain demonstrates how role-based authorization and on-chain audit records can support compliance processes while keeping detailed documentation off-chain via IPFS.
 
 ## Protocol Flow
-
 1. A Compliance Officer records a compliance report.
 2. The report stores jurisdiction, risk score, approval status, and an IPFS document reference.
 3. Authorized auditors retrieve and review the compliance record.
-4. External applications can verify the audit information directly from the blockchain.
+4. External applications verify the audit information directly from the blockchain.
 
-## Live on Ethereum (Sepolia)
-The contract is deployed and verified on the Sepolia Testnet.
+## Deployment
+The contract is deployed and verified on the Ethereum Sepolia Testnet.
+
+**Contract Address**
+
+`0x8c66419d3b68dd2ade365627e0e6a15229bca628`
 * **Contract Address:** [0x8c66419d3b68dd2ade365627e0e6a15229bca628](https://sepolia.etherscan.io/address/0x8c66419d3b68dd2ade365627e0e6a15229bca628)
 
 ## Key Features
@@ -28,9 +31,16 @@ The contract is deployed and verified on the Sepolia Testnet.
 - **Transparent Compliance Logging:** All compliance events are recorded on-chain and can be independently verified.
 
 ## Technical Architecture
-* **Framework:** Foundry (Forge)
-* **Standards:** OpenZeppelin AccessControl
-* **Network:** Sepolia Testnet
+
+**Framework:** Foundry (Forge)
+
+**Language:** Solidity 0.8.20
+
+**Security:** OpenZeppelin AccessControl
+
+**Storage:** On-chain compliance records with IPFS document references
+
+**Network:** Ethereum Sepolia Testnet
 
 ## Developer Guide
 
