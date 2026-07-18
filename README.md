@@ -20,9 +20,6 @@ RegChain demonstrates how role-based authorization and on-chain audit records ca
 ## Deployment
 The contract is deployed and verified on the Ethereum Sepolia Testnet.
 
-**Contract Address**
-
-`0x8c66419d3b68dd2ade365627e0e6a15229bca628`
 * **Contract Address:** [0x8c66419d3b68dd2ade365627e0e6a15229bca628](https://sepolia.etherscan.io/address/0x8c66419d3b68dd2ade365627e0e6a15229bca628)
 
 ## Key Features
