@@ -5,16 +5,27 @@
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.20-brightgreen)
 
 ## Overview
-RegChain Core is a smart contract framework for Real World Asset (RWA) compliance and on-chain audit reporting. It demonstrates how role-based access control, immutable blockchain records, and off-chain document references can support transparent compliance workflows for tokenized assets.
+RegChain Core is a smart contract framework for Real World Asset (RWA) compliance and on-chain audit reporting. It demonstrates how role-based authorization, blockchain-based audit records, and decentralized document references can support transparent compliance workflows for tokenized assets.
+
+## Motivation
+As tokenized Real World Assets (RWAs) become increasingly adopted, transparent compliance and auditability are essential for institutional blockchain applications.
+RegChain demonstrates how role-based authorization and on-chain audit records can support compliance processes while keeping detailed documentation off-chain via IPFS.
+
+## Protocol Flow
+
+1. A Compliance Officer records a compliance report.
+2. The report stores jurisdiction, risk score, approval status, and an IPFS document reference.
+3. Authorized auditors retrieve and review the compliance record.
+4. External applications can verify the audit information directly from the blockchain.
 
 ### Live on Ethereum (Sepolia)
 The contract is deployed and verified on the Sepolia Testnet.
 * **Contract Address:** [0x8c66419d3b68dd2ade365627e0e6a15229bca628](https://sepolia.etherscan.io/address/0x8c66419d3b68dd2ade365627e0e6a15229bca628)
 
-## Key Features
-* **Role-Based Access Control (RBAC):** Leverages OpenZeppelin's AccessControl to manage specific roles for Auditors and Compliance Officers.
-* **Immutable Audit Trail:** Logged reports include risk scores, jurisdiction data (EU, US, ASIA), and IPFS metadata hashes.
-* **Enterprise Security:** Built with Solidity 0.8.20 and industry-standard security libraries.
+### Key Features
+- **Role-Based Access Control (RBAC):** Built on OpenZeppelin AccessControl to manage Compliance Officer and Auditor permissions.
+- **On-Chain Audit Records:** Stores compliance reports including jurisdiction, risk score, approval status, and IPFS document references.
+- **Transparent Compliance Logging:** All compliance events are recorded on-chain and can be independently verified.
 
 ## Technical Architecture
 * **Framework:** Foundry (Forge)
